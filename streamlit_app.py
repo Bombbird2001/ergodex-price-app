@@ -59,7 +59,11 @@ st.write('### Price: ', price_pair)
 ## FINAL GRAPH
 st.altair_chart(chart, use_container_width=True)
 
-
+try:
+	with open("last_updated.txt", "r") as f:
+		st.write("Last updated: " + f.read())
+except:
+	print("Last updated time file missing")
 
 st.write(
 """
