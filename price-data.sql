@@ -5,7 +5,7 @@ Last updated: 2022-03-18
 Objective: pull all liquidity pair pricing over time
 ***************************/
 
-CREATE VIEW price_data AS 
+CREATE OR REPLACE VIEW price_data AS
 
 with data_pools as 
 (select pool_state_id, pool_id, x_id, x_amount, y_id, y_amount, gindex 
