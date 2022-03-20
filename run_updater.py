@@ -49,7 +49,7 @@ while True:
 			subprocess.run(["git", "add", "price-data.csv"])
 			print("Cleanup: Price data staged")
 		if not committed:
-			subprocess.run(["git", "commit", "-m", "Auto-updated price data at " + timeNow]
+			subprocess.run(["git", "commit", "-m", "Auto-updated price data at " + timeNow])
 			print("Cleanup: Changes committed")
 		subprocess.run(["git", "push", "origin", repo_branch]
 		print("Cleanup: Commit pushed to origin:" + repo_branch)
