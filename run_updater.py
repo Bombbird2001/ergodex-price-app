@@ -26,11 +26,11 @@ while True:
 		subprocess.run(["git", "add", "price-data.csv"])
 		print("Price data staged")
 		added = True
-		subprocess.run(["git", "commit", "-m", "Auto-updated price data at " + timeNow]
+		subprocess.run(["git", "commit", "-m", "Auto-updated price data at " + timeNow])
 		print("Changes committed")
 		committed = True
-		subprocess.run(["git", "push", "origin", "main"]
-		print("Commit pushed to origin:main")
+		subprocess.run(["git", "push", "origin", repo_branch])
+		print("Commit pushed to origin:" + repo_branch)
 		data_get = lu_changed = lu_set = added = committed = False
 		print("------------------------------------------------------------------------------")
 		time.sleep(updatePeriod)
