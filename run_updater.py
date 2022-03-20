@@ -4,6 +4,7 @@ import os
 from datetime import datetime, timezone
 
 updatePeriod = 300 # Updates once every ~5 minutes (excluding time it takes to get data from PSQL server, pushing to Github)
+repo_branch = "automated-push-testing" # The branch to push the data changes to
 
 while True:
 	data_get = False
@@ -50,6 +51,6 @@ while True:
 		if not committed:
 			subprocess.run(["git", "commit", "-m", "Auto-updated price data at " + timeNow]
 			print("Cleanup: Changes committed")
-		subprocess.run(["git", "push", "origin", "main"]
-		print("Cleanup: Commit pushed to origin:main")
+		subprocess.run(["git", "push", "origin", repo_branch]
+		print("Cleanup: Commit pushed to origin:" + repo_branch)
 		break
